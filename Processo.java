@@ -5,4 +5,5 @@ public class Processo {
     int ciclos_necessarios;
     String recurso_necessario;
     Processo proximo;
+    int algumacoisa;
 }
