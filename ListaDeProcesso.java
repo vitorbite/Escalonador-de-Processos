@@ -9,5 +9,12 @@ public class ListaDeProcesso {
     this.tamanho = 0;
    }
 
-   
+    public void Adicionar(Processo novo) {
+        // Processo no = new Processo();
+        if (cabeça == null) {
+            cabeça = novo;
+            tamanho++;
+            return;
+        }
+    }
 }
