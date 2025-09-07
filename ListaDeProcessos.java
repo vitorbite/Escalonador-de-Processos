@@ -4,7 +4,7 @@ public class ListaDeProcessos {
     Processo cauda;
     int tamanho;
       
-   public ListaDeProcesso(){
+   public ListaDeProcessos(){
     this.cabeça = null;
     this.tamanho = 0;
    }
@@ -21,7 +21,6 @@ public class ListaDeProcessos {
 
      public void Remover() {
         if (cabeça.recurso_necessario == "DISCO") {
-            scheduler.lista_bloqueados.Adicionar(cabeça);
             
         }
         // Processo atual = cabeça;
