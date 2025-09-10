@@ -18,8 +18,8 @@ public class ListaDeProcessos {
             return;
         }
     }
-
-     public void Remover() {
+    // Fazer alterações no futuro ------------------------
+     public void Remover(ListaDeProcessos lista_bloqueados) {
         if (cabeça.recurso_necessario == "DISCO") {
             
         }
