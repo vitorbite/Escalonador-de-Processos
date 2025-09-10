@@ -14,6 +14,13 @@ public class Scheduler {
                 lista_baixa_prioridade.Remover(lista_bloqueados);
             }
             contador_ciclos_alta_prioridade = 0;
+            
+        }
+            else {
+             lista_alta_prioridade.Remover(lista_bloqueados);
+             contador_ciclos_alta_prioridade++;
+             lista_media_prioridade.Remover(lista_bloqueados);
+             lista_baixa_prioridade.Remover(lista_bloqueados);
         }
     }  
 }
