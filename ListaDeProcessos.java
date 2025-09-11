@@ -10,14 +10,18 @@ public class ListaDeProcessos {
    }
 
     public void Adicionar(Processo novo) {
-        // Processo no = new Processo();
+        
         if (cabeça == null) {
             cabeça = novo;
             cauda = novo;
+        }else{
+            cauda.proximo = novo;
+            cauda = novo;
+            }
             tamanho++;
-            return;
+            
         }
-    }
+    
     // Fazer alterações no futuro ------------------------
      public void Remover(ListaDeProcessos lista_bloqueados) {
         if (cabeça.recurso_necessario == "DISCO") {
@@ -33,13 +37,13 @@ public class ListaDeProcessos {
             cabeça = cabeça.proximo;
             tamanho--;
         }else{
-            // Adicionar(scheduler.lista_bloqueados.cabeça);
+            //Adicionar(scheduler.lista_bloqueados.cabeça);
             
             cabeça.ciclos_necessarios--; // remove 1 ciclo
             // Precisa mover para o final da lista
             // Implementar a melhor estrutura de dados depois
 
-            
+            //
         }
     }
 }
