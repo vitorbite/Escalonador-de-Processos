@@ -52,6 +52,10 @@ public class ListaDeProcessos {
         }
     }
     public void DesbloquearProcesso(ListaDeProcessos lista_original) {
+        if (this.cabeça == null) {
+            System.out.println("Nenhum processo bloqueado");
+            return;
+        }
         Processo desbloqueado = cabeça;
         cabeça = cabeça.proximo;
         desbloqueado.proximo = null;
