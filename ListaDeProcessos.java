@@ -51,4 +51,16 @@ public class ListaDeProcessos {
             // Precisa mover para o final da lista
         }
     }
+    public void DesbloquearProcesso(ListaDeProcessos lista_original) {
+        if (this.cabeça == null) {
+            System.out.println("Nenhum processo bloqueado");
+            return;
+        }
+        Processo desbloqueado = cabeça;
+        cabeça = cabeça.proximo;
+        desbloqueado.proximo = null;
+        tamanho--;
+        lista_original.Adicionar(desbloqueado);
+        System.out.println("Processo " + desbloqueado.nome + " desbloqueado e movida para sua lista original.");
+    }
 }
