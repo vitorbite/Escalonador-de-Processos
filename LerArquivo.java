@@ -22,6 +22,9 @@ public class LerArquivo {
                     int prioridade = Integer.parseInt(partes[2].trim());
                     int ciclos = Integer.parseInt(partes[3].trim());
                     String recurso = partes[4].trim().replace("\"", "");
+                    if (recurso.isEmpty()) {
+                        recurso = null;
+                    }
 
                     Processo processo = new Processo(id, nome, prioridade, ciclos, recurso);
                     lista.Adicionar(processo);
