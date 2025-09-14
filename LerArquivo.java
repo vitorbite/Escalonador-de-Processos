@@ -3,9 +3,9 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class LerArquivo {
-       
-        public static void main(String[] args) {
+        public ListaDeProcessos LeituraDeArquivo() {
             String caminho = "processo.txt"; // nome do arquivo
+            ListaDeProcessos lista = new ListaDeProcessos("Processos Lidos");
 
             try (BufferedReader br = new BufferedReader(new FileReader(caminho)))  { // cria o buffer para ler o arquivo
                 String linha;
@@ -23,22 +23,13 @@ public class LerArquivo {
                     int ciclos = Integer.parseInt(partes[3].trim());
                     String recurso = partes[4].trim().replace("\"", "");
 
-                    System.out.println("ID: " + id);
-                    System.out.println("Nome: " + nome);
-                    System.out.println("Prioridade: " + prioridade);
-                    System.out.println("Ciclos: " + ciclos);
-                    System.out.println("Recurso: " + recurso);
-                    System.out.println("---------------------");
-
-
-                    
+                    Processo processo = new Processo(id, nome, prioridade, ciclos, recurso);
+                    lista.Adicionar(processo);
                 }
                 
             } catch (IOException e) {
                   e.printStackTrace();
             }
-        
-    
-        
-    }
+            return lista;
+        }
 }
