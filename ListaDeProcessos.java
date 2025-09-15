@@ -1,10 +1,11 @@
 public class ListaDeProcessos {
-
+    String nome;
     Processo cabeça;
     Processo cauda;
     int tamanho;
       
-   public ListaDeProcessos(){
+   public ListaDeProcessos(String nome){
+    this.nome = nome;
     this.cabeça = null;
     this.tamanho = 0;
    }
@@ -62,5 +63,26 @@ public class ListaDeProcessos {
         tamanho--;
         lista_original.Adicionar(desbloqueado);
         System.out.println("Processo " + desbloqueado.nome + " desbloqueado e movida para sua lista original.");
+
     }
+        public void Imprimir() {
+        if (cabeça == null) {
+            System.out.println("================================");
+            System.out.println("\n" + nome + ": ");
+            System.out.println("Lista vazia.\n");
+            return;
+        }
+
+        Processo atual = cabeça;
+        System.out.println("================================");
+        System.out.println(nome + ": ");
+        while (atual != null) {
+            System.out.print(atual.nome + " -> ");
+            atual = atual.proximo;
+        }
+        System.out.println("null\n");
+        }
+        public boolean eVazia{
+            return tamanho == 0;
+        }
 }
