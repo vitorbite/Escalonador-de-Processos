@@ -24,5 +24,15 @@ public class Main {
             }
             atual = atual.proximo;
         }
+
+        lista_alta.Imprimir();
+        lista_media.Imprimir();
+        lista_baixa.Imprimir();
+        lista_bloqueados.Imprimir();
+        scheduler.executarCicloDeCpu();
+        lista_alta.Imprimir();
+        lista_media.Imprimir();
+        lista_baixa.Imprimir();
+        lista_bloqueados.Imprimir();
     }
 }
