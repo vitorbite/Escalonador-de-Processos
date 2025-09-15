@@ -7,6 +7,22 @@ public class Main {
         ListaDeProcessos lista_bloqueados = scheduler.lista_bloqueados;
 
         LerArquivo leitor = new LerArquivo();
-        
+        ListaDeProcessos lista = leitor.LeituraDeArquivo();
+        Processo atual = lista.cabeça;
+        while (atual != null) {
+            Processo temp = new Processo(atual.id, atual.nome, atual.prioridade, atual.ciclos_necessarios, atual.recurso_necessario);
+            switch (atual.prioridade) {
+                case 1:
+                    lista_alta.Adicionar(temp);
+                    break;
+                case 2:
+                    lista_media.Adicionar(temp);
+                    break;
+                case 3:
+                    lista_baixa.Adicionar(temp);
+                    break;
+            }
+            atual = atual.proximo;
+        }
     }
 }
