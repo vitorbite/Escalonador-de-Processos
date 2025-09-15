@@ -64,6 +64,7 @@ public class ListaDeProcessos {
         lista_original.Adicionar(desbloqueado);
         System.out.println("Processo " + desbloqueado.nome + " desbloqueado e movida para sua lista original.");
 
+    }
         public void Imprimir() {
         if (cabeça == null) {
             System.out.println("================================");
@@ -81,5 +82,7 @@ public class ListaDeProcessos {
         }
         System.out.println("null\n");
         }
-    }
+        public boolean eVazia{
+            return tamanho == 0;
+        }
 }
