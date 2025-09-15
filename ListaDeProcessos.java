@@ -82,7 +82,7 @@ public class ListaDeProcessos {
         }
         System.out.println("null\n");
         }
-        public boolean eVazia{
+        public boolean eVazia(){
             return tamanho == 0;
         }
 }
