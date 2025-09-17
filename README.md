@@ -19,6 +19,19 @@ A estrutura escolhida foi a lista encadeada simples, por permitir inserções e 
 Apesar da limitação de buscas em O(n), mostrou-se adequada ao problema, garantindo eficiência nas operações básicas do escalonador.
 
 ##💾 Como executar 
+Instale o arquivo .zip do repositorio 
+extraia ele em sua maquina 
+abra a pasta do projeto em uma IDE
+Execute o codigo 
+
+## ➕ Como adicionar mais processos 
+Abra o arquivo txt chamado processo que esta dentro da pasta junto com os arquivos do codigo
+Cada linha é um processo e cada caracteristica do processo é dividido por virgula.
+Id:1,Nome:"Acordar",Prioridade:1,Numero de ciclos:8, Recurso:Disco
+o algoritmo identifica o que cada atributo é então não precisa por o nome de cada atributo
+basta colocar como esta no exemplo a seguir
+Ex:1, "Acordar", 1, 8, "DisCo"
+
 
 
 
