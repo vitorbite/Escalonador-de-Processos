@@ -34,10 +34,14 @@ Execute o codigo
 
 ## ➕ Como adicionar mais processos 
 Abra o arquivo txt chamado processo que esta dentro da pasta junto com os arquivos do codigo
+
 Cada linha é um processo e cada caracteristica do processo é dividido por virgula.
+
 Id: 1, Nome: "Acordar", Prioridade: 1, Numero de ciclos: 8, Recurso: "Disco".
+
 o algoritmo identifica o que cada atributo é então não precisa por o nome de cada atributo
-basta colocar como esta no exemplo a seguir
+basta colocar como esta no exemplo a seguir:
+
 Ex:1, "Acordar", 1, 8, "DisCo"
 
 
