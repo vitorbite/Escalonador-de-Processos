@@ -18,3 +18,7 @@ Leitura de processos a partir de arquivo de entrada.
 A estrutura escolhida foi a lista encadeada simples, por permitir inserções e remoções em tempo constante O(1) e pela simplicidade de implementação. 
 Apesar da limitação de buscas em O(n), mostrou-se adequada ao problema, garantindo eficiência nas operações básicas do escalonador.
 
+##💾 Como executar 
+
+
+
