@@ -19,11 +19,17 @@ A estrutura escolhida foi a lista encadeada simples, por permitir inserções e 
 Apesar da limitação de buscas em O(n), mostrou-se adequada ao problema, garantindo eficiência nas operações básicas do escalonador.
 
 ##💾 Como executar 
+
 Instale o arquivo .zip do repositorio 
+
 extraia ele em sua maquina 
+
 abra a pasta do projeto em uma IDE
+
 crie um arquivo txt chamado "processo"
+
 adicione processos 
+
 Execute o codigo 
 
 ## ➕ Como adicionar mais processos 
