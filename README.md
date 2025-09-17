@@ -39,7 +39,7 @@ Cada linha é um processo e cada caracteristica do processo é dividido por virg
 
 Id: 1, Nome: "Acordar", Prioridade: 1, Numero de ciclos: 8, Recurso: "Disco".
 
-o algoritmo identifica o que cada atributo é então não precisa por o nome de cada atributo
+o algoritmo identifica o que cada atributo é, então não precisa por o nome de cada atributo
 basta colocar como esta no exemplo a seguir:
 
 Ex:1, "Acordar", 1, 8, "DisCo"
