@@ -7,8 +7,22 @@ public class Scheduler {
     int contador_ciclos_alta_prioridade = 0;
 
     public void executarCicloDeCpu() {
-while (!lista_alta_prioridade.eVazia() || !lista_media_prioridade.eVazia()  !lista_baixa_prioridade.eVazia() || !lista_bloqueados.eVazia()) {
-
+        while (!lista_alta_prioridade.eVazia() || !lista_media_prioridade.eVazia()  !lista_baixa_prioridade.eVazia() || !lista_bloqueados.eVazia()) {
+        // Desbloqueando Processo da lista de bloqueados
+            if (!lista_bloqueados.eVazia()) {
+                switch (lista_bloqueados.cabeça.prioridade) {
+                    case 1:
+                        lista_bloqueados.DesbloquearProcesso(lista_alta_prioridade);
+                        break;
+                    case 2:
+                        lista_bloqueados.DesbloquearProcesso(lista_media_prioridade);
+                        break;
+                    case 3:
+                        lista_bloqueados.DesbloquearProcesso(lista_baixa_prioridade);
+                        break;
+                }
+                lista_bloqueados.Imprimir();
+            }
 
     // aplicando regra de anti-inanição
 
