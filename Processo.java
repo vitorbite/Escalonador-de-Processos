@@ -5,7 +5,8 @@ public class Processo {
     int ciclos_necessarios;
     String recurso_necessario;
     Processo proximo;
-    
+    int i;
+
 public Processo(int id, String nome, int prioridade, int ciclos_necessarios, String recurso_necessario) {
         this.nome = nome;
         this.id = id;

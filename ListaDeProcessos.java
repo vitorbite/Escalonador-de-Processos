@@ -3,47 +3,51 @@ public class ListaDeProcessos {
     Processo cabeça;
     Processo cauda;
     int tamanho;
-      
-   public ListaDeProcessos(String nome){
-    this.nome = nome;
-    this.cabeça = null;
-    this.tamanho = 0;
-   }
+
+    public ListaDeProcessos(String nome) {
+        this.nome = nome;
+        this.cabeça = null;
+        this.tamanho = 0;
+    }
 
     public void Adicionar(Processo novo) {
 
         if (cabeça == null) {
             cabeça = novo;
             cauda = novo;
-        }else{
+        } else {
             cauda.proximo = novo;
             cauda = novo;
-            }
-            tamanho++;
-            
         }
-    
-    // Fazer alterações no futuro ------------------------
-     public void Remover(ListaDeProcessos lista_bloqueados) {
+        tamanho++;
+
+    }
+
+    public boolean Remover(ListaDeProcessos lista_bloqueados) {
         if (cabeça == null) {
-            System.out.println("Nenhum processo\n");
-            return;
-        }    
-        if (cabeça.recurso_necessario == "DISCO") {
-            Processo bloqueado = cabeça;
-            cabeça = cabeça.proximo;
-            bloqueado.proximo = null;
-            tamanho--;
-            lista_bloqueados.Adicionar(bloqueado);
-            System.out.println("Processo " + bloqueado.nome + " movido para bloqueados.");
-            return;
+            System.out.println("Nenhum processo na lista de " + nome + "\n");
+            return false;
         }
-         System.out.println("Quantidade de ciclos de " + cabeça.nome + " " + cabeça.ciclos_necessarios);
+        if (cabeça.recurso_necessario != null) {
+            if (cabeça.recurso_necessario.equalsIgnoreCase("DISCO") && cabeça.i == 0) {
+                Processo bloqueado = cabeça;
+                cabeça = cabeça.proximo;
+                bloqueado.proximo = null;
+                tamanho--;
+                lista_bloqueados.Adicionar(bloqueado);
+                System.out.println("\nProcesso " + bloqueado.nome + " movido para bloqueados.");
+                lista_bloqueados.Imprimir();
+                bloqueado.i++;
+                return Remover(lista_bloqueados);
+            }
+        }
+        System.out.println(
+                "Quantidade de ciclos de " + cabeça.nome + ": " + cabeça.ciclos_necessarios + ", da lista " + nome);
+        System.out.println("Executando " + cabeça.nome + "...");
         cabeça.ciclos_necessarios--; // remove 1 ciclo
         if (cabeça.ciclos_necessarios == 0) {
-            System.out.println("Processo " + cabeça.nome + " concluído.");
+            System.out.println("------Processo " + cabeça.nome + " concluído.------");
             cabeça = cabeça.proximo;
-            tamanho--;
         } else {
             Processo atual = cabeça;
             cabeça = cabeça.proximo;
@@ -51,7 +55,10 @@ public class ListaDeProcessos {
             Adicionar(atual);
             // Precisa mover para o final da lista
         }
+        tamanho--;
+        return true;
     }
+
     public void DesbloquearProcesso(ListaDeProcessos lista_original) {
         if (this.cabeça == null) {
             System.out.println("Nenhum processo bloqueado");
@@ -62,10 +69,11 @@ public class ListaDeProcessos {
         desbloqueado.proximo = null;
         tamanho--;
         lista_original.Adicionar(desbloqueado);
-        System.out.println("Processo " + desbloqueado.nome + " desbloqueado e movida para sua lista original.");
-
+        System.out.println("Processo " + desbloqueado.nome + " desbloqueado e movido para sua lista original: " + lista_original.nome);
+        lista_original.Imprimir();
     }
-        public void Imprimir() {
+
+    public void Imprimir() {
         if (cabeça == null) {
             System.out.println("================================");
             System.out.println("\n" + nome + ": ");
@@ -77,12 +85,13 @@ public class ListaDeProcessos {
         System.out.println("================================");
         System.out.println(nome + ": ");
         while (atual != null) {
-            System.out.print(atual.nome + " -> ");
+            System.out.print(atual.id + "- " + atual.nome + " -> ");
             atual = atual.proximo;
         }
         System.out.println("null\n");
-        }
-        public boolean eVazia(){
-            return tamanho == 0;
-        }
+    }
+
+    public boolean eVazia() {
+        return tamanho == 0;
+    }
 }
