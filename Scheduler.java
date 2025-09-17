@@ -7,7 +7,7 @@ public class Scheduler {
     int contador_ciclos_alta_prioridade = 0;
 
     public void executarCicloDeCpu() {
-        while (!lista_alta_prioridade.eVazia() || !lista_media_prioridade.eVazia()  !lista_baixa_prioridade.eVazia() || !lista_bloqueados.eVazia()) {
+        while (!lista_alta_prioridade.eVazia() || !lista_media_prioridade.eVazia() || !lista_baixa_prioridade.eVazia() || !lista_bloqueados.eVazia()) {
         // Desbloqueando Processo da lista de bloqueados
             if (!lista_bloqueados.eVazia()) {
                 switch (lista_bloqueados.cabeça.prioridade) {
@@ -25,7 +25,7 @@ public class Scheduler {
             }
 
         // aplicando regra de anti-inanição
-        
+
         if (contador_ciclos_alta_prioridade == 5) {
                 System.out.println("Regra de Anti-inanição acionada.");
                 if (!lista_media_prioridade.eVazia()) {
