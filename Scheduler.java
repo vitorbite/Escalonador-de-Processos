@@ -7,7 +7,11 @@ public class Scheduler {
     int contador_ciclos_alta_prioridade = 0;
 
     public void executarCicloDeCpu() {
-// aplicando regra de anti-inanição
+while (!lista_alta_prioridade.eVazia() || !lista_media_prioridade.eVazia()  !lista_baixa_prioridade.eVazia() || !lista_bloqueados.eVazia()) {
+
+
+    // aplicando regra de anti-inanição
+
         if (contador_ciclos_alta_prioridade == 5) {
             lista_media_prioridade.Remover(lista_bloqueados);
             if (lista_media_prioridade.tamanho == 0) {
@@ -21,6 +25,7 @@ public class Scheduler {
              contador_ciclos_alta_prioridade++;
              lista_media_prioridade.Remover(lista_bloqueados);
              lista_baixa_prioridade.Remover(lista_bloqueados);
-        }
+            }
+        } 
     }  
 }
