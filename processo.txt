@@ -1,8 +1,0 @@
-1, "Acordar", 1, 8, "DisCo"
-2, "Levantar", 2, 2, "a"
-3, "Tomar café", 3, 3, ""
-4, "Imprimir", 1, 2, "Impressora"
-5, "Estudar", 2, 10, "DISCO"
-6, "Comer", 1, 5, "DISCO"
-7, "Beber", 1, 3, "DISCO"
-8, "Escovar os Dentes", 1, 7, "Disco"

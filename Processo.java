@@ -5,7 +5,7 @@ public class Processo {
     int ciclos_necessarios;
     String recurso_necessario;
     Processo proximo;
-    int i;
+    int i; // contador de ciclos executados, adicionado para controle de execução de bloqueados
 
 public Processo(int id, String nome, int prioridade, int ciclos_necessarios, String recurso_necessario) {
         this.nome = nome;

@@ -23,7 +23,7 @@ public class LerArquivo {
                     int ciclos = Integer.parseInt(partes[3].trim());
                     String recurso = partes[4].trim().replace("\"", "");
                     if (recurso.isEmpty()) {
-                        recurso = null;
+                        recurso = null; // se o recurso for vazio, atribui como null
                     }
 
                     Processo processo = new Processo(id, nome, prioridade, ciclos, recurso);
@@ -33,6 +33,6 @@ public class LerArquivo {
             } catch (IOException e) {
                   e.printStackTrace();
             }
-            return lista;
+            return lista; // retorna a lista com todos os processos lidos
         }
 }

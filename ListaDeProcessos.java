@@ -4,7 +4,7 @@ public class ListaDeProcessos {
     Processo cauda;
     int tamanho;
 
-    public ListaDeProcessos(String nome) {
+    public ListaDeProcessos(String nome) { // Construtor
         this.nome = nome;
         this.cabeça = null;
         this.tamanho = 0;
@@ -12,7 +12,7 @@ public class ListaDeProcessos {
 
     public void Adicionar(Processo novo) {
 
-        if (cabeça == null) {
+        if (cabeça == null) { // Verifica se a lista está vazia
             cabeça = novo;
             cauda = novo;
         } else {
@@ -23,13 +23,14 @@ public class ListaDeProcessos {
 
     }
 
-    public boolean Remover(ListaDeProcessos lista_bloqueados) {
+    public boolean Remover(ListaDeProcessos lista_bloqueados) { // Executa o processo na cabeça da lista
         if (cabeça == null) {
             System.out.println("Nenhum processo na lista de " + nome + "\n");
             return false;
         }
         if (cabeça.recurso_necessario != null) {
-            if (cabeça.recurso_necessario.equalsIgnoreCase("DISCO") && cabeça.i == 0) {
+            if (cabeça.recurso_necessario.equalsIgnoreCase("DISCO") && cabeça.i == 0) { // Bloqueia o processo se tiver Disco como recurso
+                System.out.println("O Processo " + cabeça.nome + " necessita do recurso DISCO e será bloqueado.");
                 Processo bloqueado = cabeça;
                 cabeça = cabeça.proximo;
                 bloqueado.proximo = null;
@@ -38,14 +39,13 @@ public class ListaDeProcessos {
                 System.out.println("\nProcesso " + bloqueado.nome + " movido para bloqueados.");
                 lista_bloqueados.Imprimir();
                 bloqueado.i++;
-                return Remover(lista_bloqueados);
+                return Remover(lista_bloqueados); // Chama o método de novo para executar o próximo processo
             }
         }
-        System.out.println(
-                "Quantidade de ciclos de " + cabeça.nome + ": " + cabeça.ciclos_necessarios + ", da lista " + nome);
+        System.out.println("Quantidade de ciclos de " + cabeça.nome + ": " + cabeça.ciclos_necessarios + ", da lista " + nome);
         System.out.println("Executando " + cabeça.nome + "...");
         cabeça.ciclos_necessarios--; // remove 1 ciclo
-        if (cabeça.ciclos_necessarios == 0) {
+        if (cabeça.ciclos_necessarios == 0) { // Conclusão de processo
             System.out.println("------Processo " + cabeça.nome + " concluído.------");
             cabeça = cabeça.proximo;
         } else {
@@ -59,8 +59,8 @@ public class ListaDeProcessos {
         return true;
     }
 
-    public void DesbloquearProcesso(ListaDeProcessos lista_original) {
-        if (this.cabeça == null) {
+    public void DesbloquearProcesso(ListaDeProcessos lista_original) { // Desbloqueia o primeiro processo da lista de bloqueados
+        if (this.cabeça == null) { // lista de bloqueados vazia
             System.out.println("Nenhum processo bloqueado");
             return;
         }
@@ -68,12 +68,12 @@ public class ListaDeProcessos {
         cabeça = cabeça.proximo;
         desbloqueado.proximo = null;
         tamanho--;
-        lista_original.Adicionar(desbloqueado);
+        lista_original.Adicionar(desbloqueado); // Adiciona o processo desbloqueado na sua lista original
         System.out.println("Processo " + desbloqueado.nome + " desbloqueado e movido para sua lista original: " + lista_original.nome);
         lista_original.Imprimir();
     }
 
-    public void Imprimir() {
+    public void Imprimir() { // Imprime a lista de processos
         if (cabeça == null) {
             System.out.println("================================");
             System.out.println("\n" + nome + ": ");
@@ -91,7 +91,7 @@ public class ListaDeProcessos {
         System.out.println("null\n");
     }
 
-    public boolean eVazia() {
+    public boolean eVazia() { // Verifica se a lista está vazia
         return tamanho == 0;
     }
 }
