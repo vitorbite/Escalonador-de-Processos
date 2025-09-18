@@ -50,6 +50,8 @@ Cada linha é um processo e cada caracteristica do processo é dividido por virg
 O algoritmo identifica o que cada atributo é, então não precisa por o nome de cada atributo
 basta colocar como esta no exemplo a seguir:
 
+
+**Exemplos:**
 ```txt
 1, "Acordar", 1, 8, "DisCo"\
 2, "Imprimir", 3, 5, "" 
