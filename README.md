@@ -53,7 +53,7 @@ basta colocar como esta no exemplo a seguir:
 
 **Exemplos:**
 ```txt
-1, "Acordar", 1, 8, "DisCo"\
+1, "Acordar", 1, 8, "DisCo"
 2, "Imprimir", 3, 5, "" 
 ```
 - O campo **Recurso** pode ser vazio (`""`) se o processo não precisar de nenhum recurso.  
