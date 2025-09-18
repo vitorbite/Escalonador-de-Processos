@@ -102,6 +102,27 @@ java -version
 
 6. Execute o codigo
 ---
+## ➕ Como adicionar mais processos 
+Abra o arquivo .txt chamado "processo.txt" que está dentro da pasta junto com os arquivos do codigo
+
+Cada linha é um processo e cada caracteristica do processo é dividido por virgula.
+
+- ID, "Nome do Processo", Prioridade, Número de Ciclos, "Recurso"
+
+
+O algoritmo identifica o que cada atributo é, então não precisa por o nome de cada atributo
+basta colocar como esta no exemplo a seguir:
+
+
+**Exemplos:**
+```txt
+2, "Leitura", 3, 5, "DisCo" 
+1, "Acordar", 1, 8, ""
+```
+- O campo **Recurso** pode ser vazio (`""`) se o processo não precisar de nenhum recurso.  
+- O algoritmo identifica automaticamente os atributos, então não é necessário nomeá-los.
+
+---
 🧑‍💻 Executando o Projeto via Terminal (sem IDE)
 1. Abra o terminal ou prompt de comando
 Navegue até a pasta onde estão os arquivos .java do projeto. Exemplo:
@@ -124,25 +145,4 @@ Depois de compilado, rode o programa usando a classe principal (Main):
 java Main
 ```
 ---
-## ➕ Como adicionar mais processos 
-Abra o arquivo .txt chamado "processo.txt" que está dentro da pasta junto com os arquivos do codigo
-
-Cada linha é um processo e cada caracteristica do processo é dividido por virgula.
-
-- ID, "Nome do Processo", Prioridade, Número de Ciclos, "Recurso"
-
-
-O algoritmo identifica o que cada atributo é, então não precisa por o nome de cada atributo
-basta colocar como esta no exemplo a seguir:
-
-
-**Exemplos:**
-```txt
-1, "Acordar", 1, 8, "DisCo"
-2, "Imprimir", 3, 5, "" 
-```
-- O campo **Recurso** pode ser vazio (`""`) se o processo não precisar de nenhum recurso.  
-- O algoritmo identifica automaticamente os atributos, então não é necessário nomeá-los.
-
-
 
