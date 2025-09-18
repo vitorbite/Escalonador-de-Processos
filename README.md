@@ -1,4 +1,4 @@
-# Escalonar de Processos
+# Escalonador de Processos - iCEVOS
 **Disciplina**: Algoritmos e Estrutura de Dados\
 **Professor**: Dimmy Magalhães.
 
