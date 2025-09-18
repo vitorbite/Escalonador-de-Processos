@@ -22,27 +22,31 @@ Apesar da limitação de buscas em O(n), mostrou-se adequada ao problema, garant
 
 Instale o arquivo .zip do repositorio 
 
-extraia ele em sua maquina 
+extraia ele em sua máquina 
 
 abra a pasta do projeto em uma IDE
 
-crie um arquivo txt chamado "processo"
+crie um arquivo .txt chamado "processo.txt"
 
 adicione processos 
 
 Execute o codigo 
 
 ## ➕ Como adicionar mais processos 
-Abra o arquivo txt chamado processo que esta dentro da pasta junto com os arquivos do codigo
+Abra o arquivo .txt chamado "processo.txt" que está dentro da pasta junto com os arquivos do codigo
 
 Cada linha é um processo e cada caracteristica do processo é dividido por virgula.
 
 Id: 1, Nome: "Acordar", Prioridade: 1, Numero de ciclos: 8, Recurso: "Disco".
 
-o algoritmo identifica o que cada atributo é, então não precisa por o nome de cada atributo
+O Recurso pode ser vazio, caso não seja necessário.
+
+O algoritmo identifica o que cada atributo é, então não precisa por o nome de cada atributo
 basta colocar como esta no exemplo a seguir:
 
 Ex:1, "Acordar", 1, 8, "DisCo"
+ou
+Ex:2, "Imprimir", 3, 5, "" 
 
 
 
