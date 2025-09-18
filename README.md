@@ -33,7 +33,7 @@ Apesar da limitação de buscas em O(n), mostrou-se adequada ao problema, garant
 
 3. abra a pasta do projeto em uma IDE
 
-4. crie um arquivo .txt chamado "processo.txt"
+4. crie um arquivo .txt chamado "processo.txt" na raiz do Projeto, onde está o README e o Relatório em pdf
 
 5. adicione processos 
 
