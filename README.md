@@ -44,8 +44,8 @@ O Recurso pode ser vazio, caso não seja necessário.
 O algoritmo identifica o que cada atributo é, então não precisa por o nome de cada atributo
 basta colocar como esta no exemplo a seguir:
 
-Ex:1, "Acordar", 1, 8, "DisCo"
-ou
+Ex:1, "Acordar", 1, 8, "DisCo"\
+ou\
 Ex:2, "Imprimir", 3, 5, "" 
 
 
