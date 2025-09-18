@@ -1,3 +1,4 @@
+package src;
 public class Processo {
     int id = 0;
     String nome;

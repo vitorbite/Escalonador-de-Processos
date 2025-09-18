@@ -1,3 +1,4 @@
+package src;
 public class ListaDeProcessos {
     String nome;
     Processo cabeça;
