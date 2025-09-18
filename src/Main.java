@@ -1,5 +1,3 @@
-package src;
-
 public class Main {
     public static void main(String[] args) {
         // Inicializando Listas de Processos
@@ -24,6 +22,9 @@ public class Main {
                 case 3:
                     lista_baixa.Adicionar(temp); // Adiciona o processo na baixa prioridade
                     break;
+                default:
+                    System.out.println("Prioridade inválida para o processo: " + atual.id + " - " + atual.nome);
+                    break;
             }
             atual = atual.proximo;
         }
@@ -34,9 +35,6 @@ public class Main {
         lista_baixa.Imprimir();
         lista_bloqueados.Imprimir();
         scheduler.executarCicloDeCpu(); // Iniciando a execução do ciclo de CPU
-        lista_alta.Imprimir();
-        lista_media.Imprimir();
-        lista_baixa.Imprimir();
-        lista_bloqueados.Imprimir();
+
     }
 }

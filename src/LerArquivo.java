@@ -1,11 +1,10 @@
-package src;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class LerArquivo {
         public ListaDeProcessos LeituraDeArquivo() {
-            String caminho = "processo.txt"; // nome do arquivo
+            String caminho = "../processo.txt"; // nome do arquivo
             ListaDeProcessos lista = new ListaDeProcessos("Processos Lidos");
 
             try (BufferedReader br = new BufferedReader(new FileReader(caminho)))  { // cria o buffer para ler o arquivo

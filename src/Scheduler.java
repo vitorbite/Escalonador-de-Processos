@@ -1,4 +1,3 @@
-package src;
 public class Scheduler {
     ListaDeProcessos lista_alta_prioridade = new ListaDeProcessos("Alta Prioridade");
     ListaDeProcessos lista_media_prioridade = new ListaDeProcessos("Média Prioridade");
@@ -8,8 +7,9 @@ public class Scheduler {
     int contador_ciclos_alta_prioridade = 0; // contador para a regra de anti-inanição
 
     public void executarCicloDeCpu() {
-        while (!lista_alta_prioridade.eVazia() || !lista_media_prioridade.eVazia() || !lista_baixa_prioridade.eVazia() || !lista_bloqueados.eVazia()) {
-        // Desbloqueando Processo da lista de bloqueados
+        while (!lista_alta_prioridade.eVazia() || !lista_media_prioridade.eVazia() || !lista_baixa_prioridade.eVazia()
+                || !lista_bloqueados.eVazia()) {
+            // Desbloqueando Processo da lista de bloqueados
             if (!lista_bloqueados.eVazia()) {
                 switch (lista_bloqueados.cabeça.prioridade) {
                     case 1:
@@ -25,9 +25,9 @@ public class Scheduler {
                 lista_bloqueados.Imprimir();
             }
 
-        // aplicando regra de anti-inanição
+            // aplicando regra de anti-inanição
 
-        if (contador_ciclos_alta_prioridade == 5) {
+            if (contador_ciclos_alta_prioridade == 5) {
                 System.out.println("Regra de Anti-inanição acionada.");
                 if (!lista_media_prioridade.eVazia()) {
 
@@ -61,5 +61,10 @@ public class Scheduler {
             }
             System.out.println("\n");
         }
+        System.out.println("\n==========================================");
+        lista_alta_prioridade.Imprimir();
+        lista_media_prioridade.Imprimir();
+        lista_baixa_prioridade.Imprimir();
+        lista_bloqueados.Imprimir();
     }
 }
