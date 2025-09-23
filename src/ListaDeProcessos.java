@@ -29,7 +29,7 @@ public class ListaDeProcessos {
             return false;
         }
         if (cabeça.recurso_necessario != null) {
-            if (cabeça.recurso_necessario.equalsIgnoreCase("DISCO") && cabeça.i == 0) { // Bloqueia o processo se tiver Disco como recurso
+            if (cabeça.recurso_necessario.equalsIgnoreCase("DISCO") && cabeça.i == 0) {
                 System.out.println("O Processo " + cabeça.nome + " necessita do recurso DISCO e será bloqueado.");
                 Processo bloqueado = cabeça;
                 cabeça = cabeça.proximo;
@@ -37,16 +37,15 @@ public class ListaDeProcessos {
                 tamanho--;
                 lista_bloqueados.Adicionar(bloqueado);
                 System.out.println("\nProcesso " + bloqueado.nome + " movido para bloqueados.");
-                lista_bloqueados.Imprimir();
                 bloqueado.i++;
-                return Remover(lista_bloqueados); // Chama o método de novo para executar o próximo processo
+                return false; // Não executou ciclo, apenas bloqueou
             }
         }
         System.out.println("Quantidade de ciclos de " + cabeça.nome + ": " + cabeça.ciclos_necessarios + ", da lista " + nome);
         System.out.println("Executando " + cabeça.nome + "...");
         cabeça.ciclos_necessarios--; // remove 1 ciclo
         if (cabeça.ciclos_necessarios == 0) { // Conclusão de processo
-            System.out.println("------Processo " + cabeça.nome + " concluído.------");
+            System.out.println("------Processo " + cabeça.id + "- " + cabeça.nome + " concluído.------");
             cabeça = cabeça.proximo;
         } else {
             Processo atual = cabeça;
@@ -70,7 +69,6 @@ public class ListaDeProcessos {
         tamanho--;
         lista_original.Adicionar(desbloqueado); // Adiciona o processo desbloqueado na sua lista original
         System.out.println("Processo " + desbloqueado.nome + " desbloqueado e movido para sua lista original: " + lista_original.nome);
-        lista_original.Imprimir();
     }
 
     public void Imprimir() { // Imprime a lista de processos

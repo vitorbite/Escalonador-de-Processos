@@ -22,7 +22,6 @@ public class Scheduler {
                         lista_bloqueados.DesbloquearProcesso(lista_baixa_prioridade);
                         break;
                 }
-                lista_bloqueados.Imprimir();
             }
 
             // aplicando regra de anti-inanição
@@ -32,11 +31,9 @@ public class Scheduler {
                 if (!lista_media_prioridade.eVazia()) {
 
                     lista_media_prioridade.Remover(lista_bloqueados); // executa média prioridade
-                    lista_media_prioridade.Imprimir();
 
                 } else if (!lista_baixa_prioridade.eVazia()) {
                     lista_baixa_prioridade.Remover(lista_bloqueados); // executa baixa prioridade
-                    lista_baixa_prioridade.Imprimir();
                 }
                 contador_ciclos_alta_prioridade = 0;
                 System.out.println("==========================================");
@@ -45,18 +42,18 @@ public class Scheduler {
 
                 // Regra de execução padrão
                 if (!lista_alta_prioridade.eVazia()) {
-                    boolean executado = lista_alta_prioridade.Remover(lista_bloqueados); // executa alta prioridade
-                    lista_alta_prioridade.Imprimir();
-                    if (executado) {
-                        contador_ciclos_alta_prioridade++;
+                    boolean executou = false;
+                    while (!lista_alta_prioridade.eVazia() && !executou) {
+                        executou = lista_alta_prioridade.Remover(lista_bloqueados);
                     }
-                    System.out.println("Contador de ciclos de alta prioridade: " + contador_ciclos_alta_prioridade);
+                    if (executou) {
+                        contador_ciclos_alta_prioridade++;
+                        System.out.println("Contador de ciclos de alta prioridade: " + contador_ciclos_alta_prioridade);
+                    }
                 } else if (!lista_media_prioridade.eVazia()) {
                     lista_media_prioridade.Remover(lista_bloqueados); // executa média prioridade
-                    lista_media_prioridade.Imprimir();
                 } else if (!lista_baixa_prioridade.eVazia()) {
                     lista_baixa_prioridade.Remover(lista_bloqueados); // executa baixa prioridade
-                    lista_baixa_prioridade.Imprimir();
                 }
             }
             System.out.println("\n");

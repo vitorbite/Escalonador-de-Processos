@@ -5,7 +5,7 @@ public class Main {
         ListaDeProcessos lista_alta = scheduler.lista_alta_prioridade;
         ListaDeProcessos lista_media = scheduler.lista_media_prioridade;
         ListaDeProcessos lista_baixa = scheduler.lista_baixa_prioridade;
-        ListaDeProcessos lista_bloqueados = scheduler.lista_bloqueados;
+        // ListaDeProcessos lista_bloqueados = scheduler.lista_bloqueados;
 
         LerArquivo leitor = new LerArquivo(); 
         ListaDeProcessos lista = leitor.LeituraDeArquivo(); // Lendo o arquivo e armazenando a lista com todos os processos 
@@ -30,10 +30,6 @@ public class Main {
         }
 
         // Imprimindo os processos nas listas
-        lista_alta.Imprimir();
-        lista_media.Imprimir();
-        lista_baixa.Imprimir();
-        lista_bloqueados.Imprimir();
         scheduler.executarCicloDeCpu(); // Iniciando a execução do ciclo de CPU
 
     }
